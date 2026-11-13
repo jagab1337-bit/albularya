@@ -82,3 +82,10 @@
 .scroll-star.star-managed{animation:none!important}
 @keyframes steady-star-turn{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.brand>svg>use{animation:none!important;transform:none!important}.scroll-star{animation:none!important;transform:none!important}}
+
+/* Proposal credit, highlighted in the deck's warm gold. */
+.proposal-credit{position:relative;text-align:center;margin-top:27px;padding:25px 0 5px;border-top:1px solid var(--line)}
+.proposal-credit mark{display:inline-block;max-width:100%;padding:9px 17px;color:var(--forest);font-family:var(--sans);font-size:10px;font-weight:400;line-height:1.9;letter-spacing:1px;border:1px solid #d9a54270;border-radius:2px;background:linear-gradient(110deg,#d9a54225 0%,#e8c4749c 40%,#d9a54240 65%,#e8c4748c 100%);background-size:230% 100%;text-shadow:0 0 9px #d9a54255;animation:proposal-glow 4.5s ease-in-out infinite}
+@keyframes proposal-glow{0%,100%{background-position:0% 50%;box-shadow:0 0 5px #d9a54218,0 0 15px #d9a54210;border-color:#d9a54255}50%{background-position:100% 50%;box-shadow:0 0 15px #d9a54270,0 0 32px #d9a54238;border-color:#d9a542b3}}
+@media(max-width:760px){.proposal-credit{padding-top:23px;margin-top:24px}.proposal-credit mark{font-size:9px;letter-spacing:.55px;padding:9px 12px}}
+@media(prefers-reduced-motion:reduce){.proposal-credit mark{animation:none;background-position:50% 50%;box-shadow:0 0 12px #d9a54235}}
