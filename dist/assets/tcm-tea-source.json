@@ -1,0 +1,22 @@
+{
+  "title": "Teacups and Teapots on Wooden Table",
+  "photographer": "Ivan S",
+  "source_url": "https://www.pexels.com/photo/teacups-and-teapots-on-wooden-table-8952396/",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "download_url": "https://images.pexels.com/photos/8952396/pexels-photo-8952396.jpeg?auto=compress&cs=tinysrgb&w=2200",
+  "original_dimensions": {
+    "width": 6000,
+    "height": 4002
+  },
+  "download_dimensions": {
+    "width": 2200,
+    "height": 1467
+  },
+  "local_files": [
+    "tcm-tea-ritual.webp",
+    "tcm-tea-ritual-small.webp"
+  ],
+  "processing": "Format conversion to WebP and downscaling only; no visual/content edits.",
+  "alt_text": "A warm wooden tea table with a dark ceramic teapot, small earthenware cups and a cast-iron kettle beside a terracotta cushion."
+}

@@ -1,0 +1,54 @@
+/* A dedicated spotlight for the tea tradition, in Albularya's deck palette. */
+.tea-feature{position:relative;isolation:isolate;overflow:clip;background:var(--sand);padding-top:102px;padding-bottom:70px}
+.tea-heading{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:47px}
+.tea-heading .eyebrow{color:var(--rust)}
+.tea-heading h2{font-size:clamp(62px,6.1vw,94px);line-height:.99;margin-top:25px;letter-spacing:-.04em}
+.tea-heading h2 em{color:var(--rust)}
+.tea-heading-note{display:flex;gap:24px;align-items:center;padding-bottom:6px;flex-shrink:0}
+.tea-heading-note>svg{width:38px;height:38px;color:var(--rust)}
+.tea-heading-note>p{font-size:12px;line-height:1.85;margin:0}
+.tea-image{margin:0;position:relative;background:var(--forest)}
+.tea-image>img{width:100%;height:620px;object-fit:cover;object-position:center 55%}
+.tea-image:after{content:'';position:absolute;inset:62% 0 0;background:linear-gradient(transparent,#16291bc9);pointer-events:none}
+.tea-photo-label{position:absolute;bottom:47px;left:32px;right:32px;z-index:1;display:flex;justify-content:space-between;gap:25px;font-size:9px;letter-spacing:2px;line-height:1.7;color:var(--ivory)}
+.tea-photo-credit{position:absolute;bottom:17px;left:32px;right:32px;z-index:1;color:#f5efe3b3;font-size:8px;letter-spacing:.3px;line-height:1.8}
+.tea-photo-credit a{text-decoration:underline;text-underline-offset:3px}
+.tea-editorial{background:var(--forest);color:var(--ivory);padding:47px 49px 46px;display:grid;grid-template-columns:1fr 1.2fr;gap:9%}
+.tea-editorial .eyebrow{font-size:9px;color:var(--gold);letter-spacing:1.8px}
+.tea-editorial h3{font-size:49px;line-height:1.05;letter-spacing:-.025em;margin-top:20px}
+.tea-editorial h3 em{color:#dfc48c}
+.tea-editorial p:not(.eyebrow){font-size:13px;line-height:1.95;color:#f5efe3c9;max-width:540px}
+.tea-editorial p+p{margin-top:17px}
+.tea-story-link{margin-top:22px;color:var(--ivory)}
+.tea-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:42px;padding-top:37px;margin-top:0}
+.tea-notes>div{display:flex;gap:17px}
+.tea-notes>div>span{font-size:9px;color:var(--rust);padding-top:6px}
+.tea-notes h4{font-family:var(--serif);font-size:27px;font-weight:400;letter-spacing:-.4px;line-height:1.25}
+.tea-notes p{font-size:11px;line-height:1.9;margin-top:10px;max-width:280px}
+.tea-context{border-top:1px solid var(--line);padding-top:18px;margin-top:33px;font-size:9px;line-height:1.9;color:#1c2b24ad}
+.tea-foliage .leaf-drift-one{width:290px;height:350px;left:-90px;top:0}
+.tea-foliage .leaf-drift-two{width:270px;height:320px;right:-70px;bottom:2%}
+.tea-foliage .leaf-drift-three{right:13%;top:1%}
+.tea-foliage .leaf-drift-four{left:38%;top:90%}
+.tea-foliage .leaf-drift-five{right:42%;top:6%}
+.featured-tea .journal-meta{align-items:center;flex-wrap:wrap;row-gap:8px}
+.featured-story-badge{font-size:8px;letter-spacing:1.4px;padding:6px 10px;border:1px solid #a4532a5c;color:var(--rust)}
+.journal-feature.featured-tea{align-items:stretch;padding-bottom:58px}
+.featured-tea .journal-image-link{border-top-left-radius:170px;min-height:540px;height:100%}
+.featured-tea .journal-image-link img{object-position:center 55%}
+.featured-tea>div{align-self:center}
+.featured-tea .journal-meta+p{margin-top:24px}
+.journal-cards.journal-cards--three{grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+.journal-cards--three .journal-image-link{height:280px}
+.journal-cards--three h3{font-size:36px}
+.journal-cards--three p:not(.journal-meta){font-size:12px}
+.journal-cards--three .journal-meta{font-size:8px;letter-spacing:1px;gap:8px;flex-wrap:wrap}
+.tcm-article-page .article-cover img{object-position:center 55%}
+.tcm-article-page .article-cover figcaption a,.tcm-sources a{text-decoration:underline;text-underline-offset:3px}
+.tcm-sources{font-size:11px;line-height:1.9;margin-top:20px}
+.tcm-sources a{display:inline-block;margin-right:14px}
+@media(max-width:1100px){.tea-heading h2{font-size:68px}.tea-heading-note{gap:18px}.tea-heading-note>p{font-size:11px}.tea-image>img{height:530px}.tea-editorial{padding:38px;gap:7%}.tea-editorial h3{font-size:43px}.tea-editorial p:not(.eyebrow){font-size:12px}.tea-notes{gap:25px}.tea-notes h4{font-size:25px}.featured-tea .journal-image-link{min-height:495px}.journal-cards.journal-cards--three{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.tea-feature{padding-top:72px;padding-bottom:45px}.tea-heading{display:block;margin-bottom:31px}.tea-heading h2{font-size:clamp(52px,11.5vw,76px);line-height:1.03;margin-top:23px}.tea-heading-note{margin-top:25px;gap:17px;padding:0}.tea-heading-note>svg{width:28px;height:28px}.tea-heading-note>p{font-size:11px;line-height:1.9}.tea-heading-note>p br{display:none}.tea-image>img{height:390px;object-position:center 55%}.tea-photo-label{left:18px;right:18px;bottom:50px;font-size:7px;letter-spacing:1.3px;display:block}.tea-photo-label span:last-child{display:block;margin-top:5px;font-size:6px}.tea-photo-credit{left:18px;right:18px;bottom:15px;font-size:7px}.tea-editorial{grid-template-columns:1fr;gap:25px;padding:30px 25px 32px}.tea-editorial h3{font-size:45px;line-height:1.06;margin-top:17px}.tea-editorial h3 br{display:none}.tea-editorial p:not(.eyebrow){font-size:12px;line-height:1.9;max-width:none}.tea-story-link{font-size:10px;gap:20px}.tea-notes{grid-template-columns:1fr;gap:0;padding-top:14px}.tea-notes>div{padding:22px 0;border-bottom:1px solid var(--line);gap:20px}.tea-notes h4{font-size:29px}.tea-notes p{font-size:12px;max-width:350px;margin-top:8px}.tea-context{border:0;padding-top:0;margin-top:21px;font-size:9px}.tea-foliage .leaf-drift-one{width:200px;height:245px;left:-90px;top:1%}.tea-foliage .leaf-drift-two{width:190px;height:230px;right:-70px;bottom:1%}.tea-foliage .leaf-drift-three{right:7%;top:2%;width:60px;height:80px}.tea-foliage .leaf-drift-four{left:7%;top:92%;width:100px;height:120px}.tea-foliage .leaf-drift-five{right:12%;top:66%;width:85px;height:105px}.journal-feature.featured-tea{padding-bottom:37px}.featured-tea .journal-image-link{min-height:0;height:400px;border-top-left-radius:135px}.featured-tea h2{font-size:53px}.featured-story-badge{font-size:7px;padding:5px 8px}.journal-cards.journal-cards--three{grid-template-columns:1fr;gap:37px}.journal-cards--three .journal-image-link{height:310px}.journal-cards--three h3{font-size:39px}.tcm-sources{font-size:10px}}
+@media(max-width:390px){.tea-heading h2{font-size:49px}.tea-editorial{padding-inline:22px}.tea-editorial h3{font-size:41px}.tea-image>img{height:335px}.featured-tea .journal-image-link{height:350px}.featured-tea h2{font-size:47px}.journal-cards--three .journal-image-link{height:270px}.journal-cards--three h3{font-size:36px}.tea-story-link{font-size:9px;gap:15px}}
+
+.article-source{text-decoration:underline;text-underline-offset:3px}

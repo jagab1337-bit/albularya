@@ -24,7 +24,7 @@ Cormorant Garamond display typography with the deck's Lexend supporting text. Fo
 | Terracotta | `#a4532a` |
 | Ochre | `#d9a542` |
 
-All 11 original illustrative concept images were cropped from the supplied deck and optimized as WebP. The private investor PDF and financial projections are excluded.
+The 11 original illustrative concept images were cropped from the supplied deck and optimized as WebP. The featured TCM tea photograph is by [Ivan S on Pexels](https://www.pexels.com/photo/teacups-and-teapots-on-wooden-table-8952396/) under the [Pexels License](https://www.pexels.com/license/); the source and processing details are recorded in `dist/assets/tcm-tea-source.json`. The private investor PDF and financial projections are excluded.
 
 ## Interactions
 
@@ -35,7 +35,7 @@ All 11 original illustrative concept images were cropped from the supplied deck 
 - A gently unfolding brand leaf and stars that spin steadily at rest, accelerate with scroll speed in either direction, then ease back to their idle pace.
 - Subtle scroll parallax, image zoom, scrolling ribbon, and section reveals.
 - A dedicated back-to-top action that reaches document position zero on every page.
-- A sticky Blog link and `/blogs/` journal with three complete sample stories.
+- A sticky Blog link and `/blogs/` journal with four complete sample stories and a highlighted TCM tea feature.
 - Reduced-motion support, named dialogs, focus handling and a skip link.
 
 ## Vercel
@@ -51,8 +51,9 @@ Venue, menu and services are planned concepts. This static preview does not send
 ## Journal routes
 
 - `/blogs/`
+- `/blogs/tcm-tea-traditions/`
 - `/blogs/filipino-botanical-pantry/`
 - `/blogs/a-slower-island-morning/`
 - `/blogs/the-art-of-a-daily-ritual/`
 
-Stories are original sample editorial written for the mockup, with concept imagery from the supplied deck. All decorative motion respects reduced-motion preferences; offscreen leaf animation is paused.
+Stories are original sample editorial written for the mockup, using the deck imagery and the credited Pexels tea photograph. All decorative motion respects reduced-motion preferences; offscreen leaf animation is paused.
