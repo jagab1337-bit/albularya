@@ -26,11 +26,13 @@ function selectRitual(key, focus = false) {
     const active = tab.dataset.ritual === key;
     tab.setAttribute('aria-selected', String(active));
     tab.tabIndex = active ? 0 : -1;
-    if (active && focus) {
-      tab.focus({ preventScroll: true });
+    if (active) {
+      if (focus) tab.focus({ preventScroll: true });
       const tabs = $('.ritual-tabs');
-      const tabLeft = tab.offsetLeft - tabs.offsetLeft;
-      tabs.scrollTo({ left: Math.max(0, tabLeft - 12), behavior: reduced ? 'instant' : 'smooth' });
+      const bounds = tab.getBoundingClientRect();
+      const track = tabs.getBoundingClientRect();
+      const left = tabs.scrollLeft + bounds.left - track.left - (tabs.clientWidth - bounds.width) / 2;
+      tabs.scrollTo({ left: Math.max(0, Math.min(tabs.scrollWidth - tabs.clientWidth, left)), behavior: reduced ? 'instant' : 'smooth' });
     }
   });
   const index = Object.keys(rituals).indexOf(key) + 1;
@@ -121,19 +123,33 @@ document.addEventListener('click', event => {
   window.scrollTo({ top, behavior: reduced ? 'instant' : 'smooth' });
 });
 
-// Stars keep a steady compositor-driven rotation at rest. Scroll speed adds a
-// short-lived boost, so only the acceleration/settling phase needs JS frames.
-const starEntries = $$('svg').filter(svg => $('use[href="#spark"]', svg)).map(svg => {
-  svg.classList.add('scroll-star');
-  const entry = { element: svg, visible: !('IntersectionObserver' in window), animation: null };
+// Stars and arrows share one idle speed and the same scroll boost. Hover adds
+// a local boost without rotating the surrounding text or changing a hit target.
+const starEntries = $$('svg').filter(svg => $('use[href="#spark"], use[href="#arrow"]', svg)).map(svg => {
+  const isStar = Boolean($('use[href="#spark"]', svg));
+  const base = getComputedStyle(svg).transform;
+  svg.classList.add('spin-icon');
+  if (isStar) svg.classList.add('scroll-star');
+  const entry = { element: svg, visible: !('IntersectionObserver' in window), animation: null, hoverRate: 1, hoverTarget: 1 };
   if (svg.animate) {
-    svg.classList.add('star-managed');
+    const prefix = base === 'none' ? '' : `${base} `;
+    svg.classList.add('spin-managed');
+    if (isStar) svg.classList.add('star-managed');
     entry.animation = svg.animate(
-      [{ transform: 'rotate(0deg)' }, { transform: 'rotate(360deg)' }],
+      [{ transform: `${prefix}rotate(0deg)` }, { transform: `${prefix}rotate(360deg)` }],
       { duration: 36000, iterations: Infinity, easing: 'linear' }
     );
     entry.animation.pause();
   }
+  const hoverArea = svg.closest('a, button') || svg;
+  hoverArea.addEventListener('pointerenter', event => {
+    if (event.pointerType === 'touch' || reduced) return;
+    entry.hoverTarget = 3;
+    startStarEase();
+  });
+  const leave = () => { entry.hoverTarget = 1; if (!reduced) startStarEase(); };
+  hoverArea.addEventListener('pointerleave', leave);
+  hoverArea.addEventListener('pointercancel', leave);
   return entry;
 });
 let starScrollSpeed = 0;
@@ -144,14 +160,17 @@ let previousScrollY = window.scrollY;
 let previousScrollTime = performance.now();
 function applyStarRate() {
   starEntries.forEach(entry => {
-    if (!entry.animation) return;
-    if (entry.animation.updatePlaybackRate) entry.animation.updatePlaybackRate(starRate);
-    else entry.animation.playbackRate = starRate;
+    const rate = Math.min(24, starRate * entry.hoverRate);
+    if (entry.animation) {
+      if (entry.animation.updatePlaybackRate) entry.animation.updatePlaybackRate(rate);
+      else entry.animation.playbackRate = rate;
+    } else entry.element.style.animationDuration = `${36000 / rate}ms`;
   });
 }
 function syncStarAnimations() {
   starEntries.forEach(entry => {
     const active = entry.visible && !reduced && !document.hidden;
+    entry.element.classList.toggle('spin-active', active);
     entry.element.classList.toggle('star-active', active);
     if (!entry.animation) return;
     if (active) entry.animation.play();
@@ -167,9 +186,15 @@ function resetStarBoost() {
   previousStarFrame = 0;
   starScrollSpeed = 0;
   starRate = 1;
+  starEntries.forEach(entry => { entry.hoverRate = 1; entry.hoverTarget = 1; });
   previousScrollY = window.scrollY;
   previousScrollTime = performance.now();
   applyStarRate();
+}
+function startStarEase() {
+  if (starFrame || reduced || document.hidden) return;
+  previousStarFrame = 0;
+  starFrame = requestAnimationFrame(easeStarBoost);
 }
 function easeStarBoost(time) {
   const elapsed = previousStarFrame ? Math.min(64, time - previousStarFrame) : 16;
@@ -177,8 +202,14 @@ function easeStarBoost(time) {
   starScrollSpeed *= Math.exp(-elapsed / 300);
   const targetRate = 1 + Math.min(11, starScrollSpeed * .003);
   starRate += (targetRate - starRate) * (1 - Math.exp(-elapsed / 110));
+  let hoverSettling = false;
+  starEntries.forEach(entry => {
+    entry.hoverRate += (entry.hoverTarget - entry.hoverRate) * (1 - Math.exp(-elapsed / 140));
+    if (Math.abs(entry.hoverTarget - entry.hoverRate) > .01) hoverSettling = true;
+    else entry.hoverRate = entry.hoverTarget;
+  });
   applyStarRate();
-  if (starScrollSpeed < 3 && Math.abs(starRate - 1) < .015) {
+  if (starScrollSpeed < 3 && Math.abs(starRate - 1) < .015 && !hoverSettling) {
     starRate = 1;
     applyStarRate();
     starFrame = 0;
@@ -194,13 +225,13 @@ function sampleStarScrollSpeed() {
   previousScrollTime = now;
   if (reduced || document.hidden || !starEntries.length) return;
   starScrollSpeed = Math.max(starScrollSpeed * .65, velocity);
-  if (!starFrame) starFrame = requestAnimationFrame(easeStarBoost);
+  startStarEase();
 }
 if ('IntersectionObserver' in window) {
   const starObserver = new IntersectionObserver(entries => {
     entries.forEach(observed => {
       const entry = starEntries.find(item => item.element === observed.target);
-      if (entry) entry.visible = observed.isIntersecting;
+      if (entry) { entry.visible = observed.isIntersecting; if (!entry.visible) entry.hoverTarget = 1; }
     });
     syncStarAnimations();
   });
@@ -263,6 +294,11 @@ function openDialog(dialog) {
   $$('dialog[open]').forEach(d => d.close());
   dialog.showModal();
   document.body.classList.add('modal-open');
+  // Focus a visible static heading instead of showing an unsolicited close-button
+  // focus ring or opening the phone keyboard as soon as the dialog appears.
+  const focusTarget = $$('h2', dialog).find(heading => heading.getClientRects().length) || $('p', dialog) || dialog;
+  focusTarget.setAttribute('tabindex', '-1');
+  focusTarget.focus({ preventScroll: true });
 }
 $$('dialog').forEach(dialog => {
   dialog.addEventListener('close', () => {

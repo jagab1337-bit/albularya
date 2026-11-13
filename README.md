@@ -34,11 +34,12 @@ The 11 original illustrative concept images were cropped from the supplied deck 
 - Mobile navigation, image lightboxes and lounge details.
 - Interest form with validation and browser-only persistence, including deletion of saved details.
 - Generous animated botanical backgrounds across every page, including café/lounge copy and article margins.
-- A gently unfolding brand leaf and stars that spin steadily at rest, accelerate with scroll speed in either direction, then ease back to their idle pace.
+- Animated branding and matching SVG stars/arrows that spin steadily at rest, accelerate with scroll speed in either direction, and gain a local hover boost.
 - Subtle scroll parallax, image zoom, scrolling ribbon, and section reveals.
 - A dedicated back-to-top action that reaches document position zero on every page.
 - A sticky Blog link and `/blogs/` journal with four complete sample stories and a highlighted TCM tea feature.
-- Reduced-motion support, named dialogs, focus handling and a skip link.
+- Reduced-motion support, consistent SVG close icons, 16px form fields for mobile, named dialogs, focus handling and a skip link.
+- Mobile ritual tabs center the selected option; article drop caps have increased sizing.
 
 ## Vercel
 

@@ -1,0 +1,40 @@
+/* Consistent vector icons and mobile focus behavior across the whole site. */
+.botanical-mark,.story-leaf,.closing-leaf,.ambient-leaf,.seal-leaf{pointer-events:none}
+.ui-arrow{display:inline-block;flex:none;width:23px;height:23px;vertical-align:middle;overflow:visible}
+.spin-icon{transform-box:fill-box;transform-origin:center;animation:shared-icon-turn 36s linear infinite;animation-play-state:paused;transition:none!important}
+.spin-icon.spin-active{animation-play-state:running}
+.spin-icon.spin-managed{animation:none!important}
+@keyframes shared-icon-turn{to{transform:rotate(360deg)}}
+.image-expand,.slow-gallery .image-expand{display:grid;place-items:center;width:40px;height:40px;padding:0;border:1px solid #1c2b241a;background:var(--ivory);color:var(--forest);box-sizing:border-box}
+.image-expand .ui-arrow{width:22px;height:22px;display:block}
+.slow-gallery .image-expand{right:12px;bottom:15px}
+.slow-gallery .gallery-label{right:61px;bottom:21px;line-height:1.7}
+.back-top,.footer-top>.back-top{width:44px;height:44px;display:grid;place-items:center}
+.back-top .ui-arrow{width:22px;height:22px;display:block}
+.journal-invite-image>span>span .ui-arrow{width:23px;height:23px}
+.close-modal{appearance:none;-webkit-appearance:none;display:grid;place-items:center;padding:0;position:absolute;top:14px;right:14px;width:44px;height:44px;border:1px solid #1c2b2433;border-radius:50%;background:var(--ivory);color:var(--forest);box-shadow:none;line-height:1;touch-action:manipulation}
+.close-icon{display:block;width:20px;height:20px;pointer-events:none}
+.close-modal:hover{background:var(--sand)}
+.close-modal:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+main h1[tabindex="-1"]:focus,dialog [tabindex="-1"]:focus,dialog:focus{outline:none}
+.modal input,.modal select{font-size:16px;line-height:1.5;min-height:48px}
+.modal,.lightbox{overscroll-behavior:contain}
+.modal.lounge-modal{padding:0}
+.ritual-tabs{position:relative;scroll-padding-inline:12px}
+.ritual-tabs button:focus-visible{outline:1px solid var(--gold);outline-offset:-4px;border-radius:0}
+.ritual-tabs-hint{display:none}
+.article-body>p:first-child::first-letter{font-size:96px;line-height:.8;margin:10px 13px 0 0}
+@media(max-width:760px){
+ .modal{width:calc(100% - 28px);max-height:calc(100dvh - 28px);padding:58px 25px 28px;overflow:auto;scroll-padding-top:64px}
+ .modal.lounge-modal{padding:0}
+ .lightbox{width:calc(100% - 24px);max-height:calc(100dvh - 24px);padding:10px}
+ .lightbox .close-modal{top:12px;right:12px}
+ .ritual-tabs-hint{display:block;margin-top:23px;color:#f5efe3aa;font-size:8px;letter-spacing:1.2px}
+ .ritual-tabs{padding:4px 10px 2px 2px;gap:23px;margin-top:8px}
+ .ritual-tabs button:last-child{margin-right:10px}
+ .article-body>p:first-child::first-letter{font-size:84px;line-height:.8;margin:8px 11px 0 0}
+ .slow-gallery .gallery-label{font-size:6px;left:12px;right:56px;letter-spacing:.55px;bottom:18px}
+ .image-expand,.slow-gallery .image-expand{width:36px;height:36px;right:10px;bottom:12px}
+ .image-expand .ui-arrow{width:21px;height:21px}
+}
+@media(prefers-reduced-motion:reduce){.spin-icon{animation:none!important;transition:none!important}}
