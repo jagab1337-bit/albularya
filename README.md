@@ -31,7 +31,9 @@ All 11 original illustrative concept images were cropped from the supplied deck 
 - Six menu tabs, including keyboard navigation.
 - Mobile navigation, image lightboxes and lounge details.
 - Interest form with validation and browser-only persistence, including deletion of saved details.
-- Animated botanical backgrounds, subtle scroll parallax, image zoom, scrolling ribbon, and section reveals.
+- Generous animated botanical backgrounds across every page, including café/lounge copy and article margins.
+- A gently unfolding brand leaf and stars that spin steadily at rest, accelerate with scroll speed in either direction, then ease back to their idle pace.
+- Subtle scroll parallax, image zoom, scrolling ribbon, and section reveals.
 - A dedicated back-to-top action that reaches document position zero on every page.
 - A sticky Blog link and `/blogs/` journal with three complete sample stories.
 - Reduced-motion support, named dialogs, focus handling and a skip link.

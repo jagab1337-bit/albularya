@@ -1,0 +1,141 @@
+/* A generous botanical thread, kept behind the content and inside each section. */
+.house,.floor-copy,.footer,.journal-layout,.article-header,.article-body-foliage,.related-stories{position:relative;isolation:isolate}
+.house,.footer,.journal-layout,.article-header,.article-body-foliage,.related-stories{overflow:clip}
+.leaf-drift-four{width:150px;height:185px;left:25%;top:53%}
+.leaf-drift-four svg{--leaf-tilt:-18deg;opacity:.05;animation-delay:-13s;animation-duration:28s}
+.leaf-drift-five{width:115px;height:145px;right:22%;top:16%}
+.leaf-drift-five svg{--leaf-tilt:57deg;opacity:.055;animation-delay:-20s;animation-duration:24s}
+.leaf-drift-six{width:200px;height:245px;left:3%;top:79%}
+.leaf-drift-six svg{--leaf-tilt:-39deg;opacity:.05;animation-delay:-6s;animation-duration:31s}
+.leaf-drift-seven{width:180px;height:220px;right:-55px;top:38%}
+.leaf-drift-seven svg{--leaf-tilt:24deg;opacity:.055;animation-delay:-17s;animation-duration:29s}
+.leaf-drift-eight{width:100px;height:125px;left:37%;top:88%}
+.leaf-drift-eight svg{--leaf-tilt:-58deg;opacity:.045;animation-delay:-10s;animation-duration:27s}
+.story .leaf-drift-four{left:51%;top:69%;width:160px;height:195px}
+.story .leaf-drift-five{right:6%;top:6%;width:105px;height:130px}
+.rituals .leaf-drift-four{left:-45px;top:51%;width:200px;height:245px}
+.rituals .leaf-drift-five{right:35%;top:3%}
+.pantry .leaf-drift-four{left:41%;top:3%}
+.pantry .leaf-drift-five{right:2%;top:70%;width:165px;height:200px}
+.slow-section .leaf-drift-four{left:24%;top:75%}
+.slow-section .leaf-drift-five{right:8%;top:0}
+.hero .leaf-drift-four{left:27%;top:52%;width:115px;height:145px}
+.hero .leaf-drift-five{right:53%;top:8%;width:90px;height:115px}
+.closing .leaf-drift-four{left:14%;top:62%}
+.closing .leaf-drift-five{right:38%;top:4%;width:80px;height:100px}
+.house-foliage .leaf-drift-one{left:-85px;top:3%;width:285px;height:345px}
+.house-foliage .leaf-drift-two{right:-70px;bottom:3%;width:270px;height:330px}
+.house-foliage .leaf-drift-three{right:43%;top:41%;width:110px;height:140px}
+.house-foliage .leaf-drift-four{left:44%;top:73%;width:140px;height:175px}
+.house-foliage .leaf-drift-five{right:12%;top:0;width:95px;height:120px}
+.floor-copy{overflow:clip}
+.floor-foliage .leaf-drift-one{left:auto;right:-32px;top:7%;width:155px;height:195px}
+.floor-foliage .leaf-drift-two{right:24%;bottom:-60px;width:125px;height:155px}
+.floor-foliage .leaf-drift-three{right:auto;left:-31px;top:43%;width:92px;height:116px}
+.floor-foliage .leaf-drift svg{opacity:.06}
+.invite-foliage .leaf-drift-one{left:-60px;top:20%;width:245px;height:300px}
+.invite-foliage .leaf-drift-two{right:40%;bottom:-50px;width:180px;height:225px}
+.invite-foliage .leaf-drift-three{right:8%;top:5%}
+.invite-foliage .leaf-drift-four{left:36%;top:9%;width:90px;height:110px}
+.invite-foliage .leaf-drift-five{right:2%;top:75%}
+.footer-foliage .leaf-drift-one{left:-42px;top:12%;width:145px;height:180px}
+.footer-foliage .leaf-drift-two{right:16%;bottom:-60px;width:170px;height:210px}
+.footer-foliage .leaf-drift-three{right:2%;top:7%;width:65px;height:80px}
+.footer-foliage .leaf-drift-four{left:41%;top:47%;width:90px;height:115px}
+.footer-foliage .leaf-drift svg{opacity:.045}
+.journal-intro-foliage .leaf-drift-one{left:17%;top:14%;width:95px;height:120px}
+.journal-intro-foliage .leaf-drift-two{right:28%;bottom:-40px;width:145px;height:180px}
+.journal-intro-foliage .leaf-drift-three{right:7%;top:61%;width:70px;height:90px}
+.journal-layout-foliage .leaf-drift-one{left:-65px;top:1%;width:245px;height:300px}
+.journal-layout-foliage .leaf-drift-two{right:-65px;bottom:13%;width:240px;height:290px}
+.journal-layout-foliage .leaf-drift-three{right:36%;top:36%;width:95px;height:120px}
+.journal-layout-foliage .leaf-drift-four{left:2%;top:55%;width:140px;height:175px}
+.journal-layout-foliage .leaf-drift-five{right:1%;top:33%;width:155px;height:190px}
+.journal-layout-foliage .leaf-drift-six{left:35%;top:84%;width:105px;height:130px}
+.article-heading-foliage .leaf-drift-one{left:-60px;top:12%;width:225px;height:275px}
+.article-heading-foliage .leaf-drift-two{right:-55px;bottom:1%;width:210px;height:255px}
+.article-heading-foliage .leaf-drift-three{right:12%;top:6%;width:70px;height:90px}
+.article-heading-foliage .leaf-drift-four{left:24%;top:83%;width:95px;height:120px}
+.article-body-foliage .article-body{position:relative}
+.article-reading-foliage .leaf-drift-one{left:-75px;top:2%;width:295px;height:360px}
+.article-reading-foliage .leaf-drift-two{right:-60px;bottom:auto;top:19%;width:270px;height:330px}
+.article-reading-foliage .leaf-drift-three{right:19%;top:4%;width:90px;height:115px}
+.article-reading-foliage .leaf-drift-four{left:8%;top:44%;width:175px;height:215px}
+.article-reading-foliage .leaf-drift-five{right:9%;top:61%;width:175px;height:215px}
+.article-reading-foliage .leaf-drift-six{left:-30px;top:78%;width:250px;height:305px}
+.article-reading-foliage .leaf-drift-seven{right:-50px;top:41%;width:245px;height:300px}
+.article-reading-foliage .leaf-drift-eight{left:41%;top:91%;width:95px;height:120px}
+.article-reading-foliage .leaf-drift svg{opacity:.055}
+.related-foliage .leaf-drift-one{left:-65px;top:4%;width:255px;height:310px}
+.related-foliage .leaf-drift-two{right:-65px;bottom:-20px;width:245px;height:300px}
+.related-foliage .leaf-drift-three{right:43%;top:53%;width:100px;height:125px}
+.related-foliage .leaf-drift-four{left:20%;top:87%;width:100px;height:125px}
+.related-foliage .leaf-drift-five{right:13%;top:5%;width:95px;height:120px}
+.callout-foliage{color:var(--gold)}
+.callout-foliage .leaf-drift-one{left:-80px;top:9%;width:240px;height:295px}
+.callout-foliage .leaf-drift-two{right:29%;bottom:-75px;width:165px;height:205px}
+.callout-foliage .leaf-drift-three{right:4%;top:4%;width:65px;height:85px}
+@media(max-width:760px){
+ .leaf-drift-four{width:100px;height:125px;left:25%;top:58%}
+ .leaf-drift-five{width:80px;height:100px;right:2%;top:22%}
+ .hero .leaf-drift-four{left:-45px;top:35%;width:130px;height:160px}
+ .hero .leaf-drift-five{right:2%;top:7%;width:80px;height:100px}
+ .story .leaf-drift-four{left:57%;top:64%;width:105px;height:130px}
+ .story .leaf-drift-five{right:12%;top:2%;width:65px;height:80px}
+ .rituals .leaf-drift-four{left:-60px;top:65%;width:155px;height:195px}
+ .rituals .leaf-drift-five{right:16%;top:1%;width:65px;height:80px}
+ .pantry .leaf-drift-four{left:5%;top:47%;width:95px;height:120px}
+ .pantry .leaf-drift-five{right:-35px;top:81%;width:150px;height:185px}
+ .slow-section .leaf-drift-four{left:13%;top:34%;width:80px;height:100px}
+ .slow-section .leaf-drift-five{right:3%;top:1%;width:65px;height:85px}
+ .closing .leaf-drift-four{left:23%;top:73%;width:80px;height:100px}
+ .closing .leaf-drift-five{right:3%;top:5%;width:60px;height:75px}
+ .house-foliage .leaf-drift-one{left:-80px;top:0;width:210px;height:255px}
+ .house-foliage .leaf-drift-two{right:-60px;bottom:8%;width:190px;height:230px}
+ .house-foliage .leaf-drift-three{right:5%;top:43%;width:90px;height:115px}
+ .house-foliage .leaf-drift-four{left:-40px;top:58%;width:125px;height:155px}
+ .house-foliage .leaf-drift-five{right:9%;top:2%;width:65px;height:85px}
+ .floor-foliage .leaf-drift-one{right:-25px;top:13%;width:135px;height:170px}
+ .floor-foliage .leaf-drift-two{right:29%;bottom:-45px;width:95px;height:120px}
+ .floor-foliage .leaf-drift-three{left:-23px;top:46%;width:75px;height:95px}
+ .floor-foliage .leaf-drift svg{opacity:.065}
+ .invite-foliage .leaf-drift-one{left:-70px;top:2%;width:195px;height:240px}
+ .invite-foliage .leaf-drift-two{right:-50px;bottom:37%;width:150px;height:185px}
+ .invite-foliage .leaf-drift-three{right:8%;top:4%;width:65px;height:85px}
+ .invite-foliage .leaf-drift-four{left:9%;top:45%;width:75px;height:95px}
+ .invite-foliage .leaf-drift-five{right:1%;top:88%;width:95px;height:115px}
+ .footer-foliage .leaf-drift-one{left:-47px;top:10%;width:120px;height:150px}
+ .footer-foliage .leaf-drift-two{right:8%;bottom:-40px;width:125px;height:155px}
+ .footer-foliage .leaf-drift-three{right:-15px;top:4%;width:65px;height:80px}
+ .footer-foliage .leaf-drift-four{left:40%;top:40%;width:70px;height:90px}
+ .journal-intro-foliage .leaf-drift-one{left:5%;top:5%;width:70px;height:90px}
+ .journal-intro-foliage .leaf-drift-two{right:27%;bottom:-43px;width:110px;height:135px}
+ .journal-intro-foliage .leaf-drift-three{right:3%;top:54%;width:55px;height:70px}
+ .journal-layout-foliage .leaf-drift-one{left:-60px;top:1%;width:170px;height:210px}
+ .journal-layout-foliage .leaf-drift-two{right:-45px;bottom:9%;width:175px;height:215px}
+ .journal-layout-foliage .leaf-drift-three{right:5%;top:28%;width:95px;height:120px}
+ .journal-layout-foliage .leaf-drift-four{left:-45px;top:43%;width:140px;height:175px}
+ .journal-layout-foliage .leaf-drift-five{right:-40px;top:60%;width:145px;height:180px}
+ .journal-layout-foliage .leaf-drift-six{left:-45px;top:78%;width:150px;height:185px}
+ .article-heading-foliage .leaf-drift-one{left:-75px;top:6%;width:190px;height:235px}
+ .article-heading-foliage .leaf-drift-two{right:-80px;bottom:0;width:200px;height:245px}
+ .article-heading-foliage .leaf-drift-three{right:5%;top:1%;width:55px;height:70px}
+ .article-heading-foliage .leaf-drift-four{left:3%;top:87%;width:65px;height:85px}
+ .article-reading-foliage .leaf-drift-one{left:-75px;top:0;width:195px;height:240px}
+ .article-reading-foliage .leaf-drift-two{right:-65px;top:16%;width:190px;height:235px}
+ .article-reading-foliage .leaf-drift-three{right:3%;top:3%;width:70px;height:90px}
+ .article-reading-foliage .leaf-drift-four{left:-60px;top:38%;width:175px;height:215px}
+ .article-reading-foliage .leaf-drift-five{right:-65px;top:58%;width:190px;height:235px}
+ .article-reading-foliage .leaf-drift-six{left:-65px;top:76%;width:180px;height:225px}
+ .article-reading-foliage .leaf-drift-seven{right:-60px;top:37%;width:180px;height:220px}
+ .article-reading-foliage .leaf-drift-eight{left:11%;top:91%;width:90px;height:110px}
+ .article-reading-foliage .leaf-drift svg{opacity:.045}
+ .related-foliage .leaf-drift-one{left:-75px;top:0;width:195px;height:240px}
+ .related-foliage .leaf-drift-two{right:-65px;bottom:0;width:190px;height:235px}
+ .related-foliage .leaf-drift-three{right:-10px;top:45%;width:95px;height:120px}
+ .related-foliage .leaf-drift-four{left:5%;top:81%;width:85px;height:105px}
+ .related-foliage .leaf-drift-five{right:8%;top:2%;width:65px;height:85px}
+ .callout-foliage .leaf-drift-one{left:-75px;top:2%;width:200px;height:245px}
+ .callout-foliage .leaf-drift-two{right:27%;bottom:-65px;width:125px;height:155px}
+ .callout-foliage .leaf-drift-three{right:5%;top:4%;width:55px;height:70px}
+}

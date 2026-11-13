@@ -3,7 +3,12 @@ const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
 let reduced = motionPreference.matches;
-motionPreference.addEventListener('change', event => { reduced = event.matches; scheduleScrollUpdate(); });
+motionPreference.addEventListener('change', event => {
+  reduced = event.matches;
+  if (reduced) resetStarBoost();
+  syncStarAnimations();
+  scheduleScrollUpdate();
+});
 const rituals = {
   sip: {title:'Sip something<br> <em>rooted in good.</em>', description:'From your morning coffee to a slow afternoon steep. Familiar island botanicals, with room for a little discovery.', image:'herbal-tea', alt:'A botanical tea setting with jars of herbs, roots and fragrant leaves', tag:'SLOW STEEPS · FAMILIAR BOTANICALS', items:[['Island herbal teas','Malunggay, tanglad, pandan'],['Salabat','A warming ginger ritual'],['Coffee & cacao','Daily brews, cacao tablea'],['House tonics & elixirs','Cold steeps, botanical shots']],note:'Also on the concept menu: matcha, tropical drinks and coffee with tincture add-ons.'},
   simmer: {title:'A bowl of<br> <em>coming home.</em>', description:'Slowly simmered, generously served. Nourishing broths, soups and congee for after the surf or a quiet afternoon.', image:'pantry-still-life', alt:'Golden herbal broth alongside fresh produce and pantry jars', tag:'SLOW SIMMERED · FAMILY-SCALE NOURISHMENT', items:[['House broths','Warm, simple, restorative'],['Seasonal soups','Led by the island pantry'],['Congee','Comfort by the bowl'],['Broth pouches','Chilled or frozen, for home']],note:'Seasonal recipes are being developed. Final menu and prices will be announced closer to opening.'},
@@ -116,6 +121,97 @@ document.addEventListener('click', event => {
   window.scrollTo({ top, behavior: reduced ? 'instant' : 'smooth' });
 });
 
+// Stars keep a steady compositor-driven rotation at rest. Scroll speed adds a
+// short-lived boost, so only the acceleration/settling phase needs JS frames.
+const starEntries = $$('svg').filter(svg => $('use[href="#spark"]', svg)).map(svg => {
+  svg.classList.add('scroll-star');
+  const entry = { element: svg, visible: !('IntersectionObserver' in window), animation: null };
+  if (svg.animate) {
+    svg.classList.add('star-managed');
+    entry.animation = svg.animate(
+      [{ transform: 'rotate(0deg)' }, { transform: 'rotate(360deg)' }],
+      { duration: 36000, iterations: Infinity, easing: 'linear' }
+    );
+    entry.animation.pause();
+  }
+  return entry;
+});
+let starScrollSpeed = 0;
+let starRate = 1;
+let starFrame = 0;
+let previousStarFrame = 0;
+let previousScrollY = window.scrollY;
+let previousScrollTime = performance.now();
+function applyStarRate() {
+  starEntries.forEach(entry => {
+    if (!entry.animation) return;
+    if (entry.animation.updatePlaybackRate) entry.animation.updatePlaybackRate(starRate);
+    else entry.animation.playbackRate = starRate;
+  });
+}
+function syncStarAnimations() {
+  starEntries.forEach(entry => {
+    const active = entry.visible && !reduced && !document.hidden;
+    entry.element.classList.toggle('star-active', active);
+    if (!entry.animation) return;
+    if (active) entry.animation.play();
+    else {
+      entry.animation.pause();
+      if (reduced) entry.animation.currentTime = 0;
+    }
+  });
+}
+function resetStarBoost() {
+  cancelAnimationFrame(starFrame);
+  starFrame = 0;
+  previousStarFrame = 0;
+  starScrollSpeed = 0;
+  starRate = 1;
+  previousScrollY = window.scrollY;
+  previousScrollTime = performance.now();
+  applyStarRate();
+}
+function easeStarBoost(time) {
+  const elapsed = previousStarFrame ? Math.min(64, time - previousStarFrame) : 16;
+  previousStarFrame = time;
+  starScrollSpeed *= Math.exp(-elapsed / 300);
+  const targetRate = 1 + Math.min(11, starScrollSpeed * .003);
+  starRate += (targetRate - starRate) * (1 - Math.exp(-elapsed / 110));
+  applyStarRate();
+  if (starScrollSpeed < 3 && Math.abs(starRate - 1) < .015) {
+    starRate = 1;
+    applyStarRate();
+    starFrame = 0;
+    previousStarFrame = 0;
+  } else starFrame = requestAnimationFrame(easeStarBoost);
+}
+function sampleStarScrollSpeed() {
+  const now = performance.now();
+  const y = window.scrollY;
+  const elapsed = Math.max(16, Math.min(120, now - previousScrollTime));
+  const velocity = Math.min(10000, Math.abs(y - previousScrollY) / elapsed * 1000);
+  previousScrollY = y;
+  previousScrollTime = now;
+  if (reduced || document.hidden || !starEntries.length) return;
+  starScrollSpeed = Math.max(starScrollSpeed * .65, velocity);
+  if (!starFrame) starFrame = requestAnimationFrame(easeStarBoost);
+}
+if ('IntersectionObserver' in window) {
+  const starObserver = new IntersectionObserver(entries => {
+    entries.forEach(observed => {
+      const entry = starEntries.find(item => item.element === observed.target);
+      if (entry) entry.visible = observed.isIntersecting;
+    });
+    syncStarAnimations();
+  });
+  starEntries.forEach(entry => starObserver.observe(entry.element));
+}
+document.addEventListener('visibilitychange', () => {
+  resetStarBoost();
+  syncStarAnimations();
+});
+syncStarAnimations();
+
 // One scheduled frame per scroll event; only visible leaf scenes are measured.
 const progress = $('.scroll-progress');
 const scenes = $$('.botanical-scene');
@@ -137,7 +233,10 @@ function scheduleScrollUpdate() {
     shifts.forEach(([scene, shift]) => scene.style.setProperty('--leaf-scroll', `${shift.toFixed(1)}px`));
   });
 }
-window.addEventListener('scroll', scheduleScrollUpdate, { passive: true });
+window.addEventListener('scroll', () => {
+  sampleStarScrollSpeed();
+  scheduleScrollUpdate();
+}, { passive: true });
 window.addEventListener('resize', scheduleScrollUpdate, { passive: true });
 window.addEventListener('pageshow', scheduleScrollUpdate);
 scheduleScrollUpdate();
@@ -155,7 +254,7 @@ if ('IntersectionObserver' in window) {
     entries.forEach(entry => entry.target.classList.toggle('motion-active', entry.isIntersecting));
     scheduleScrollUpdate();
   }, { rootMargin: '80px' });
-  $$('.botanical-scene, .botanical-mark, .story-leaf, .closing-leaf, .ambient-leaf').forEach(element => leafObserver.observe(element));
+  $$('.botanical-scene, .botanical-mark, .story-leaf, .closing-leaf, .ambient-leaf, .brand>svg').forEach(element => leafObserver.observe(element));
 }
 
 // Native dialogs handle focus trapping, Escape and focus restoration.

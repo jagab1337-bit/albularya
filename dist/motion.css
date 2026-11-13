@@ -69,3 +69,16 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.leaf-drift svg,.botanical-mark,.story-leaf,.closing-leaf,.ambient-leaf{animation:none!important}.leaf-drift{transform:none!important}.js .reveal{opacity:1;transform:none;transition:none}.image-button img,.journal-invite-image img{transition:none}.js .floor-card.reveal:not(.visible) img,.js .journal-invite-image.reveal:not(.visible) img{transform:none}.scroll-progress{display:none}}
 
 @media(prefers-reduced-motion:reduce){.leaf-drift svg>use,.botanical-mark>use,.story-leaf>use,.closing-leaf>use,.ambient-leaf>use{animation:none!important;transform:none!important}}
+
+/* The brand leaf shares the site's unfolding rhythm; its wordmark stays still. */
+.brand>svg{overflow:visible}
+.brand>svg>use{transform-box:fill-box;transform-origin:50% 50%;animation:logo-unfold 6.4s cubic-bezier(.45,0,.55,1) infinite}
+.js .brand>svg>use{animation-play-state:paused}
+.brand>svg.motion-active>use{animation-play-state:running}
+@keyframes logo-unfold{0%,10%,100%{transform:rotate(40deg) scale(1,1) rotate(-40deg)}45%,55%{transform:rotate(40deg) scale(.35,.95) rotate(-40deg)}}
+.tiny-sun{width:18px;height:18px;display:inline-block;vertical-align:middle;color:var(--gold)}
+.scroll-star{transform-box:fill-box;transform-origin:center;animation:steady-star-turn 36s linear infinite;animation-play-state:paused}
+.scroll-star.star-active{animation-play-state:running}
+.scroll-star.star-managed{animation:none!important}
+@keyframes steady-star-turn{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.brand>svg>use{animation:none!important;transform:none!important}.scroll-star{animation:none!important;transform:none!important}}
