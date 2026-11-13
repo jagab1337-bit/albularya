@@ -31,7 +31,9 @@ All 11 original illustrative concept images were cropped from the supplied deck 
 - Six menu tabs, including keyboard navigation.
 - Mobile navigation, image lightboxes and lounge details.
 - Interest form with validation and browser-only persistence, including deletion of saved details.
-- Gentle image zoom, scrolling ribbon, botanical seal and reveal transitions.
+- Animated botanical backgrounds, subtle scroll parallax, image zoom, scrolling ribbon, and section reveals.
+- A dedicated back-to-top action that reaches document position zero on every page.
+- A sticky Blog link and `/blogs/` journal with three complete sample stories.
 - Reduced-motion support, named dialogs, focus handling and a skip link.
 
 ## Vercel
@@ -43,3 +45,12 @@ Deploy to the **Preview** environment for design review. Production release shou
 ## Preview boundaries
 
 Venue, menu and services are planned concepts. This static preview does not send emails, create bookings or process payments. The form explicitly explains that details stay in the visitor's browser. Opening date, exact address, final prices and contact channels still need confirmation. Raya Clinic controls clinical screening and booking for its services.
+
+## Journal routes
+
+- `/blogs/`
+- `/blogs/filipino-botanical-pantry/`
+- `/blogs/a-slower-island-morning/`
+- `/blogs/the-art-of-a-daily-ritual/`
+
+Stories are original sample editorial written for the mockup, with concept imagery from the supplied deck. All decorative motion respects reduced-motion preferences; offscreen leaf animation is paused.
