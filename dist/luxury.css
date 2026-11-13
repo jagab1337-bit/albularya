@@ -1,0 +1,140 @@
+/* Editorial refinement. Palette follows the Albularya pitch deck. */
+:root{--serif:'Cormorant Garamond',Georgia,serif}
+body{font-size:15px;line-height:1.85}
+h1,h2,h3{letter-spacing:-.035em;font-weight:400}
+h2{font-size:clamp(52px,5vw,76px);line-height:1.04}
+h3{font-size:40px;line-height:1.1}
+.concept-bar{height:32px;font-size:9px;letter-spacing:1.4px;background:var(--sand);color:var(--forest)}
+.concept-bar span{color:var(--rust)}
+.header{height:112px;padding-inline:5.5%;background:rgba(245,239,227,.97)}
+.header.scrolled{height:86px}
+.brand{gap:12px}
+.brand>span{font-size:39px;letter-spacing:-1.2px;line-height:1}
+.brand>svg{width:28px;height:41px;color:var(--rust)}
+.brand small{font-size:8px;letter-spacing:2.4px;margin-top:8px}
+.header nav{gap:32px;font-size:10px;letter-spacing:1.4px;text-transform:uppercase}
+.button{min-height:55px;font-size:11px;letter-spacing:1.1px;padding:16px 25px;gap:28px;transition:background .4s,color .4s,border-color .4s,transform .4s}
+.button-small{min-height:43px;font-size:9px;padding:11px 17px;gap:18px}
+.button:hover{transform:translateY(-1px)}
+.eyebrow{font-size:10px;letter-spacing:2.3px;font-weight:400}
+.hero{background:var(--forest);color:var(--ivory);grid-template-columns:48% 52%;min-height:790px}
+.hero-copy{padding:80px 8% 44px 11.5%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.hero .eyebrow{font-size:8px;letter-spacing:1.9px;color:#e9d6a2}
+.tiny-sun{font-size:18px;color:var(--gold);margin-right:7px}
+.hero h1{font-size:clamp(79px,7.7vw,124px);letter-spacing:-.045em;line-height:.95;margin-top:32px}
+.hero h1 em{color:#e2c68c}
+.hero-description{font-size:13px;line-height:1.95;max-width:390px;margin-top:32px;margin-bottom:30px;color:#f5efe3bd}
+.hero .button{background:transparent;border-color:#d9a54280;color:var(--ivory)}
+.hero .button:hover{background:var(--ivory);color:var(--forest);border-color:var(--ivory)}
+.hero-foot{font-size:10px;letter-spacing:.3px;margin-top:56px;color:#f5efe3bf;gap:16px;line-height:1.7}
+.hero-foot p span{opacity:.75}
+.hero-foot-line{background:var(--gold);width:33px}
+.botanical-mark{width:105px;height:125px;right:30px;bottom:30px;color:var(--gold);opacity:.1}
+.hero-visual{padding:24px 24px 24px 0}
+.hero-photo-wrap{min-height:740px;border-top-left-radius:250px}
+.hero-photo{animation-duration:35s;object-position:50% 53%}
+.photo-caption{font-size:8px;letter-spacing:1.5px;bottom:32px;left:30px;right:30px;line-height:1.6}
+.photo-caption span:first-child{max-width:250px}
+.round-seal{width:108px;height:108px;left:-55px;bottom:77px;border:5px solid var(--forest);background:#dfc48c}
+.seal-type{animation-duration:120s}
+.seal-leaf{width:31px;height:39px;top:29px;left:33px}
+.ritual-ribbon{background:var(--ivory);color:var(--forest);border-bottom:1px solid var(--line);padding:24px 0}
+.ritual-ribbon>div{font-family:var(--sans);font-style:normal;font-size:10px;font-weight:400;letter-spacing:3.3px;text-transform:uppercase;gap:45px;animation-duration:100s}
+.ritual-ribbon svg{width:15px;height:15px;color:var(--rust)}
+.section-pad{padding-top:122px;padding-bottom:122px}
+.story{gap:12%;padding-top:128px;padding-bottom:132px;align-items:center}
+.story h2{margin-top:26px}
+.story-body{padding-top:27px;max-width:520px}
+.large-copy{font-size:29px;line-height:1.45;letter-spacing:-.45px}
+.story-body>p:not(.large-copy){font-size:13px;line-height:1.95;margin-top:25px;max-width:440px}
+.story-leaf{width:34px;height:42px;top:-30px;right:13px}
+.text-link{font-size:11px;letter-spacing:.5px;padding-bottom:10px;gap:28px}
+.story .text-link{margin-top:25px}
+.section-top{margin-bottom:50px;gap:40px}
+.section-top h2{margin-top:20px}
+.section-top>p{font-size:13px;line-height:1.9;max-width:290px}
+.rituals{padding-top:100px;padding-bottom:32px}
+.ritual-tabs{margin-top:45px;margin-bottom:42px;gap:12px}
+.ritual-tabs button{font-size:29px;padding-bottom:22px}
+.ritual-tabs button span{font-size:9px;margin-right:10px;letter-spacing:.5px}
+.ritual-tabs button:after{height:1px}
+.ritual-panel{grid-template-columns:46% 1fr;gap:8%;align-items:stretch}
+.ritual-image{min-height:590px}
+.ritual-image:after{content:'';position:absolute;inset:55% 0 0;background:linear-gradient(transparent,#15251ccc);pointer-events:none}
+.ritual-image>span{z-index:1;font-size:9px;line-height:1.7;letter-spacing:1.5px;left:26px;bottom:26px}
+.ritual-detail{padding-top:9px;padding-bottom:10px}
+.ritual-detail h3{font-size:61px;line-height:1.02;letter-spacing:-.035em;margin-top:24px}
+.ritual-detail>p:not(.eyebrow){font-size:13px;line-height:1.9;margin-top:24px;max-width:460px;color:#f5efe3c7}
+.menu-items{margin-top:27px}
+.menu-items>div{padding:14px 0;gap:16px}
+.menu-items span{font-size:23px;line-height:1.3}
+.menu-items small{font-size:10px;line-height:1.65;max-width:160px;color:#f5efe3b5}
+.ritual-detail .menu-note{font-size:10px!important;margin-top:23px!important;line-height:1.9}
+.menu-bottom{margin-top:42px;padding-top:22px;font-size:9px;color:#f5efe3b0}
+.menu-bottom>span:last-child{font-size:8px;letter-spacing:1.6px}
+.house .section-top h2{max-width:710px}
+.floor-grid{gap:35px}
+.floor-card .image-button{height:370px}
+.floor-card{padding-bottom:34px}
+.floor-copy{padding:31px 4px 0}
+.floor-copy .eyebrow{font-size:9px;letter-spacing:1.9px}
+.floor-copy h3{font-size:39px;line-height:1.1;margin-top:18px}
+.floor-copy>p:not(.eyebrow){font-size:13px;line-height:1.9;margin-top:18px;max-width:475px}
+.floor-copy .text-link{margin-top:20px}
+.image-expand{width:36px;height:36px;background:var(--ivory);border:none}
+.pantry{padding-top:12px;padding-bottom:132px;gap:12%}
+.pantry-visual{padding-bottom:64px}
+.pantry-main{height:570px;border-top-right-radius:220px}
+.pantry-inset{right:-10px;width:48%;padding:10px 10px 0}
+.pantry-inset span{font-size:8px;letter-spacing:1.2px;padding:13px 0}
+.pantry-copy h2{font-size:clamp(54px,5vw,75px);line-height:1.04}
+.pantry-copy>p:not(.eyebrow){font-size:13px;line-height:1.95;margin-top:26px;max-width:435px}
+.pantry-list{margin-top:32px;margin-bottom:24px}
+.pantry-list>div{padding:20px 0;gap:23px}
+.pantry-list>div>span{font-size:9px;padding-top:7px}
+.pantry-list h4{font-size:27px;line-height:1.25;letter-spacing:-.4px}
+.pantry-list p{font-size:12px;line-height:1.8;max-width:350px;margin-top:7px}
+.slow-section{gap:8%;padding-top:110px;padding-bottom:110px}
+.slow-copy h2{font-size:65px;line-height:1.03}
+.slow-copy>p:not(.eyebrow){font-size:13px;line-height:1.9;max-width:310px;margin-top:27px}
+.slow-copy .text-link{margin-top:27px}
+.slow-gallery{gap:22px}
+.slow-gallery>.image-button{height:395px}
+.slow-gallery>.image-button:nth-child(2){margin-top:85px}
+.gallery-label{font-size:8px;line-height:1.7;letter-spacing:1px;left:18px;bottom:22px;right:46px}
+.slow-gallery .image-expand{width:29px;height:29px;bottom:20px}
+.closing{padding-top:115px;padding-bottom:115px}
+.closing h2{font-size:clamp(68px,6.9vw,106px);letter-spacing:-.04em;line-height:1.02;margin-top:30px}
+.closing p:not(.eyebrow){font-size:13px;margin-top:30px}
+.closing .button{margin-top:34px}
+.closing-leaf{width:530px;height:600px;right:-70px;top:30px;opacity:.1}
+.footer{padding-top:62px;padding-bottom:25px}
+.footer-top{padding-bottom:50px}
+.footer-top>p{font-size:25px;line-height:1.25}
+.footer-top .eyebrow{font-size:8px;letter-spacing:1.6px}
+.footer-top>div>p{font-size:12px}
+.footer-bottom{font-size:9px;gap:20px;color:#1c2b24b0;padding-top:24px}
+.modal{width:min(550px,calc(100% - 32px));padding:49px}
+.modal .eyebrow{font-size:9px}
+.modal h2{font-size:60px;line-height:1;letter-spacing:-1.8px;margin-top:22px}
+.modal p:not(.eyebrow){font-size:13px}
+.modal label{font-size:11px;margin-top:18px}
+.modal input,.modal select{font-size:13px;padding:13px 12px}
+.modal .form-note{font-size:10px!important}
+.modal form .button{margin-top:25px}
+.modal #clear-interest{font-size:11px}
+.lounge-modal{padding:0}
+.lounge-modal-body{padding:35px 45px 45px}
+.lounge-modal>img{height:250px}
+.close-modal{width:35px;height:35px}
+.lightbox p{font-size:12px;line-height:1.7}
+.js .reveal{transform:translateY(24px) scale(.99);transition-duration:1s}
+@media(min-width:1600px){.hero{min-height:850px}.hero-photo-wrap{min-height:800px}.hero-copy{padding-top:95px;padding-bottom:60px}.hero h1{font-size:124px}.hero-description{font-size:14px}.section-pad{padding-inline:max(6.8%,calc((100vw - 1400px)/2))}}
+@media(max-width:1150px) and (min-width:761px){.header{padding-inline:4%}.brand>span{font-size:35px}.header nav{gap:19px;font-size:9px;letter-spacing:1px}.button-small{font-size:8px;gap:10px;padding-inline:13px}.hero-copy{padding-left:10%;padding-right:8%;padding-top:65px}.hero h1{font-size:8.2vw}.hero-description{font-size:12px}.hero-foot{font-size:9px;margin-top:40px}.hero-photo-wrap{min-height:690px;border-top-left-radius:200px}.hero{min-height:740px}.photo-caption span:last-child{display:none}.section-pad{padding-top:95px;padding-bottom:95px}.section-top>p{max-width:230px;font-size:12px}.section-top h2{font-size:58px}.ritual-tabs{gap:7px}.ritual-tabs button{font-size:24px}.ritual-tabs button span{margin-right:5px;font-size:8px}.ritual-panel{gap:6%}.ritual-image{min-height:620px}.ritual-detail h3{font-size:52px}.menu-items>div{display:block}.menu-items small{display:block;text-align:left;max-width:none;font-size:10px;margin-top:3px}.menu-items span{font-size:22px}.floor-card .image-button{height:300px}.floor-copy h3{font-size:34px}.pantry{padding-top:0;gap:9%}.pantry-main{height:560px}.pantry-copy h2{font-size:58px}.pantry-list h4{font-size:25px}.slow-copy h2{font-size:54px}.slow-gallery>.image-button{height:355px}.gallery-label{font-size:7px;left:13px;letter-spacing:.5px}.footer-top>p{font-size:23px}.footer-bottom{font-size:8px}.rituals{padding-bottom:30px}}
+@media(max-width:760px){body{font-size:14px}html{scroll-padding-top:80px}.concept-bar{height:29px;font-size:7px;letter-spacing:.7px}.header,.header.scrolled{height:80px;padding-inline:6%}.brand{gap:9px}.brand>span{font-size:34px}.brand>svg{width:23px;height:32px}.brand small{font-size:6px;letter-spacing:1.8px;margin-top:6px}.header-cta{min-height:36px;font-size:8px;letter-spacing:.4px;padding:8px 11px;margin-right:18px;gap:10px}.header nav.open{font-size:11px;letter-spacing:1.6px;gap:24px;padding:28px 7% 32px}.hero{display:flex;min-height:0}.hero-copy{padding:54px 8% 51px;display:block}.hero .eyebrow{font-size:7px;letter-spacing:1.5px}.hero h1{font-size:clamp(70px,14.2vw,106px);letter-spacing:-.045em;line-height:.98;margin-top:27px}.hero h1 br:last-child{display:none}.hero-description{font-size:12px;max-width:340px;line-height:1.9;margin-top:27px;margin-bottom:26px}.hero .button{min-height:51px;font-size:10px;padding:14px 19px;gap:21px}.hero-foot{position:static;width:auto;margin-top:30px;font-size:9px;display:flex;gap:12px;line-height:1.65}.hero-foot-line{display:block;width:25px}.hero-foot p br{display:none}.hero-foot p span:before{content:' ';white-space:pre}.hero-visual{padding:0 16px 16px;margin:0}.hero-photo-wrap{min-height:0;height:480px;border-top-left-radius:170px}.hero-photo{object-position:50% 45%}.round-seal{width:96px;height:96px;left:auto;right:31px;bottom:38px;border-width:4px}.seal-leaf{width:29px;height:34px;top:26px;left:29px}.photo-caption{font-size:7px;bottom:24px;left:22px;right:138px;letter-spacing:1.3px}.photo-caption span:first-child{max-width:170px}.ritual-ribbon{padding:21px 0}.ritual-ribbon>div{font-size:9px;gap:31px;letter-spacing:2.3px}.ritual-ribbon svg{width:12px;height:12px}.section-pad{padding:77px 7%}.eyebrow{font-size:9px;letter-spacing:1.9px}.story{gap:31px;display:grid;grid-template-columns:1fr;padding-top:79px;padding-bottom:82px}.story h2{font-size:57px;line-height:1.03;margin-top:22px}.story h2 br{display:block}.story-body{padding-top:0}.story-leaf{width:28px;height:35px;top:-61px;right:8px}.large-copy{font-size:28px;line-height:1.4;max-width:510px}.story-body>p:not(.large-copy){font-size:13px;line-height:1.9;max-width:none;margin-top:24px}.text-link{font-size:11px;letter-spacing:.2px}.section-top{margin-bottom:31px;display:block}.section-top h2{font-size:54px;line-height:1.02;margin-top:21px}.section-top>p{max-width:340px;font-size:12px;line-height:1.9;margin-top:23px}.rituals{padding-bottom:28px}.ritual-tabs{gap:25px;margin-top:29px;margin-bottom:31px}.ritual-tabs button{font-size:28px;padding-top:12px;padding-bottom:17px}.ritual-tabs button span{font-size:9px;margin-right:7px}.ritual-panel{display:grid;grid-template-columns:1fr;gap:33px}.ritual-image{height:380px;min-height:0}.ritual-image>span{font-size:8px;left:21px;bottom:22px;right:20px;letter-spacing:1.2px}.ritual-detail{padding:0}.ritual-detail h3{font-size:54px;line-height:1.01;max-width:430px;margin-top:22px}.ritual-detail h3 br{display:none}.ritual-detail>p:not(.eyebrow){font-size:13px;line-height:1.9;max-width:none;margin-top:22px}.menu-items{margin-top:24px}.menu-items>div{padding:14px 0;display:flex}.menu-items span{font-size:23px;line-height:1.2;max-width:60%}.menu-items small{font-size:9px;max-width:130px;text-align:right;line-height:1.7}.ritual-detail .menu-note{font-size:10px!important}.menu-bottom{margin-top:32px;font-size:9px;padding-top:22px}.floor-grid{gap:41px}.house .section-top h2{max-width:390px}.floor-card .image-button{height:315px}.floor-copy{padding-top:25px}.floor-copy .eyebrow{font-size:8px;letter-spacing:1.5px}.floor-copy h3{font-size:37px;line-height:1.08;margin-top:17px}.floor-copy>p:not(.eyebrow){font-size:13px;max-width:none;margin-top:18px}.floor-copy .text-link{margin-top:18px}.pantry{display:grid;grid-template-columns:1fr;padding-top:0;padding-bottom:79px;gap:45px}.pantry-main{height:450px;border-top-right-radius:180px}.pantry-visual{padding-right:14%;padding-bottom:58px}.pantry-inset{right:0;width:45%;padding:8px 8px 0}.pantry-inset span{font-size:6.5px;letter-spacing:1px;padding:10px 0}.pantry-copy h2{font-size:57px;line-height:1.02;margin-top:21px}.pantry-copy>p:not(.eyebrow){font-size:13px;line-height:1.9;max-width:450px}.pantry-list{margin-top:27px}.pantry-list>div{padding:19px 0;gap:21px}.pantry-list h4{font-size:28px;line-height:1.25}.pantry-list p{font-size:12px;max-width:380px}.slow-section{display:grid;grid-template-columns:1fr;gap:38px;padding-top:77px;padding-bottom:77px}.slow-copy h2{font-size:57px;line-height:1.02}.slow-copy h2 br{display:block}.slow-copy>p:not(.eyebrow){font-size:13px;max-width:350px;margin-top:23px}.slow-copy .text-link{margin-top:24px}.slow-gallery{gap:13px}.slow-gallery>.image-button{height:300px}.slow-gallery>.image-button:nth-child(2){margin-top:50px}.gallery-label{font-size:7px;left:13px;right:36px;bottom:17px;letter-spacing:.7px}.slow-gallery .image-expand{width:24px;height:24px;right:9px;bottom:15px;font-size:14px}.closing{padding-top:79px;padding-bottom:85px}.closing h2{font-size:clamp(54px,12vw,76px);line-height:1.02;margin-top:29px}.closing p:not(.eyebrow){font-size:12px;line-height:1.9;margin-top:28px}.closing .button{margin-top:31px;font-size:11px;min-height:52px}.closing-leaf{width:330px;height:400px;right:-160px;top:80px}.footer{padding-top:43px;padding-bottom:23px}.footer-top{gap:34px;padding-bottom:33px}.footer-top>p{font-size:23px;line-height:1.25}.footer-top .eyebrow{font-size:7px;letter-spacing:1.2px}.footer-top>div>p{font-size:10px}.footer-bottom{font-size:8px;gap:14px;padding-top:22px}.modal{padding:40px 28px 32px}.modal h2{font-size:54px;line-height:1.02;margin-top:22px}.modal .eyebrow{font-size:8px}.modal p:not(.eyebrow){font-size:12px}.modal label{font-size:11px}.modal input,.modal select{font-size:13px}.modal .button{font-size:10px;letter-spacing:.5px}.lounge-modal{padding:0}.lounge-modal>img{height:210px}.lounge-modal-body{padding:29px}.lightbox p{font-size:11px}}
+@media(max-width:390px){.header-cta{margin-right:14px;padding:8px 9px;font-size:7px;letter-spacing:0;gap:7px}.header-cta svg{width:15px;height:15px}.brand>span{font-size:30px}.brand>svg{width:21px;height:30px}.brand small{font-size:5.5px;letter-spacing:1.6px}.brand{gap:7px}.hero-copy{padding-left:7%;padding-right:7%}.hero .eyebrow{font-size:6px;letter-spacing:1.2px}.hero h1{font-size:17vw;line-height:1.02}.hero-foot{display:flex;font-size:8px}.hero-photo-wrap{height:420px;border-top-left-radius:140px}.section-top h2{font-size:47px}.story h2,.pantry-copy h2,.slow-copy h2{font-size:52px}.ritual-image{height:325px}.ritual-detail h3{font-size:49px}.menu-items span{font-size:21px}.menu-items small{font-size:8px;max-width:110px}.slow-gallery>.image-button{height:250px}.gallery-label{font-size:6px;left:10px;letter-spacing:.4px}.footer-top>p{font-size:21px}.footer-top>div>p{font-size:9px}.footer-top .eyebrow{font-size:6px}}
+@media(max-width:345px){.header-cta{display:none}.menu-toggle{margin-left:auto}.hero h1{font-size:17vw}.hero .eyebrow{font-size:5.5px}.hero-description{font-size:11px}.hero-foot{font-size:7px}.ritual-detail h3{font-size:43px}.ritual-image{height:290px}.menu-items>div{display:block}.menu-items small{text-align:left;max-width:none;margin-top:5px}.menu-items span{max-width:none}.floor-copy h3{font-size:33px}.slow-gallery>.image-button{height:235px}.gallery-label{font-size:5.5px}.footer-top{column-gap:18px}}
+@media(prefers-reduced-motion:reduce){.js .reveal{transform:none;transition:none}.hero-photo{animation:none}.seal-type,.ritual-ribbon>div{animation:none}.hero-visual{transform:none}}
+
+.skip-link{position:fixed;top:8px;left:8px;z-index:100;padding:12px 18px;background:var(--ivory);color:var(--forest);font-size:13px;transform:translateY(-150%)}
+.skip-link:focus{transform:none}

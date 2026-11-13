@@ -1,0 +1,11 @@
+{
+  "name": "albularya-cafe",
+  "version": "0.2.0",
+  "private": true,
+  "description": "A deck-inspired concept website for Albularya Caf\u00e9, Siargao",
+  "scripts": {
+    "check": "node --check dist/app.js",
+    "dev": "python3 -m http.server 3000 --directory dist",
+    "build": "node --check dist/app.js"
+  }
+}
