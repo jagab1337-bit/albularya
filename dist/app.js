@@ -254,7 +254,7 @@ if ('IntersectionObserver' in window) {
     entries.forEach(entry => entry.target.classList.toggle('motion-active', entry.isIntersecting));
     scheduleScrollUpdate();
   }, { rootMargin: '80px' });
-  $$('.botanical-scene, .botanical-mark, .story-leaf, .closing-leaf, .ambient-leaf, .brand>svg').forEach(element => leafObserver.observe(element));
+  $$('.botanical-scene, .botanical-mark, .story-leaf, .closing-leaf, .ambient-leaf, .brand-logo').forEach(element => leafObserver.observe(element));
 }
 
 // Native dialogs handle focus trapping, Escape and focus restoration.

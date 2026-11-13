@@ -1,0 +1,17 @@
+/* Supplied Albularya artwork, with room for its profile and botanical flourish. */
+html{scroll-padding-top:154px}
+.header,.header.scrolled{height:140px}
+.header.scrolled{height:124px}
+.header .brand{display:flex;align-items:center;justify-content:flex-start;flex:0 0 176px;gap:0;min-width:0}
+.brand .brand-logo{display:block;object-fit:contain;width:176px;height:118px;max-width:100%;object-position:left center;transform-origin:50% 55%;animation:brand-breathe 8s ease-in-out infinite;transition:height .5s cubic-bezier(.22,1,.36,1)}
+.header.scrolled .brand-logo{height:108px}
+.js .brand .brand-logo{animation-play-state:paused}
+.brand .brand-logo.motion-active{animation-play-state:running}
+.footer .brand{display:flex;align-items:center;justify-content:flex-start;gap:0}
+.footer .brand .brand-logo{width:212px;height:150px}
+@keyframes brand-breathe{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-1px) scale(1.022)}}
+@media(min-width:761px) and (max-width:1150px){.header,.header.scrolled{height:132px}.header .brand{flex-basis:146px}.header .brand .brand-logo{width:146px;height:108px}.footer .brand .brand-logo{width:190px;height:138px}html{scroll-padding-top:148px}}
+@media(max-width:760px){html{scroll-padding-top:125px}.header,.header.scrolled{height:112px}.header .brand{flex-basis:126px}.header .brand .brand-logo{width:126px;height:96px}.footer .brand .brand-logo{width:160px;height:116px}.footer-top{align-items:center}.footer-top>.back-top{align-self:center}}
+@media(max-width:390px){.header .brand{flex-basis:118px}.header .brand .brand-logo{width:118px;height:90px}.footer .brand .brand-logo{width:146px;height:106px}}
+@media(max-width:350px){.header .brand{flex-basis:108px}.header .brand .brand-logo{width:108px;height:88px}}
+@media(prefers-reduced-motion:reduce){.brand .brand-logo{animation:none;transform:none;transition:none}}

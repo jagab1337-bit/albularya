@@ -14,6 +14,8 @@ Open http://localhost:3000. Run `npm run build` to check the application JavaScr
 
 ## Design
 
+The complete Albularya logo is prepared from the user-supplied artwork reference and used consistently in every header, footer and browser icon. The original phone screenshot is not included in the repository.
+
 Cormorant Garamond display typography with the deck's Lexend supporting text. Fonts are self-hosted, with OFL licenses in `dist/assets/fonts/`. The original pitch deck's palette is preserved:
 
 | Color | Hex |
