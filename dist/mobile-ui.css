@@ -5,6 +5,8 @@
 .spin-icon.spin-active{animation-play-state:running}
 .spin-icon.spin-managed{animation:none!important}
 @keyframes shared-icon-turn{to{transform:rotate(360deg)}}
+.ui-arrow.arrow-roll{animation-name:arrow-shaft-roll;transform-style:preserve-3d;backface-visibility:visible;-webkit-backface-visibility:visible}
+@keyframes arrow-shaft-roll{from{transform:perspective(180px) var(--arrow-base,matrix(1,0,0,1,0,0)) rotate3d(var(--arrow-axis-x,1),var(--arrow-axis-y,0),0,0deg)}to{transform:perspective(180px) var(--arrow-base,matrix(1,0,0,1,0,0)) rotate3d(var(--arrow-axis-x,1),var(--arrow-axis-y,0),0,360deg)}}
 .image-expand,.slow-gallery .image-expand{display:grid;place-items:center;width:40px;height:40px;padding:0;border:1px solid #1c2b241a;background:var(--ivory);color:var(--forest);box-sizing:border-box}
 .image-expand .ui-arrow{width:22px;height:22px;display:block}
 .slow-gallery .image-expand{right:12px;bottom:15px}

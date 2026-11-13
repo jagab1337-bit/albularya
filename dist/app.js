@@ -123,11 +123,30 @@ document.addEventListener('click', event => {
   window.scrollTo({ top, behavior: reduced ? 'instant' : 'smooth' });
 });
 
-// Stars and arrows share one idle speed and the same scroll boost. Hover adds
-// a local boost without rotating the surrounding text or changing a hit target.
+// Stars turn in the page plane; arrows roll around their own shafts so their
+// tips retain their directions. Both share the same scroll and hover speeds.
 const starEntries = $$('svg').filter(svg => $('use[href="#spark"], use[href="#arrow"]', svg)).map(svg => {
   const isStar = Boolean($('use[href="#spark"]', svg));
   const base = getComputedStyle(svg).transform;
+  let axisX = 1;
+  let axisY = 0;
+  if (!isStar) {
+    const arrow = $('use[href="#arrow"]', svg);
+    let localMatrix = arrow.parentElement.closest('g')?.transform.baseVal.consolidate()?.matrix;
+    try {
+      const outerMatrix = svg.getScreenCTM();
+      const innerMatrix = arrow.getScreenCTM();
+      if (outerMatrix && innerMatrix) localMatrix = outerMatrix.inverse().multiply(innerMatrix);
+    } catch { /* Hidden SVGs can have a singular matrix; the directional group is sufficient. */ }
+    if (localMatrix) {
+      const length = Math.hypot(localMatrix.a, localMatrix.b);
+      if (length > .000001) { axisX = localMatrix.a / length; axisY = localMatrix.b / length; }
+    }
+    svg.classList.add('arrow-roll');
+    svg.style.setProperty('--arrow-axis-x', axisX.toFixed(7));
+    svg.style.setProperty('--arrow-axis-y', axisY.toFixed(7));
+    svg.style.setProperty('--arrow-base', base === 'none' ? 'matrix(1,0,0,1,0,0)' : base);
+  }
   svg.classList.add('spin-icon');
   if (isStar) svg.classList.add('scroll-star');
   const entry = { element: svg, visible: !('IntersectionObserver' in window), animation: null, hoverRate: 1, hoverTarget: 1 };
@@ -135,8 +154,14 @@ const starEntries = $$('svg').filter(svg => $('use[href="#spark"], use[href="#ar
     const prefix = base === 'none' ? '' : `${base} `;
     svg.classList.add('spin-managed');
     if (isStar) svg.classList.add('star-managed');
+    const frames = isStar
+      ? [{ transform: `${prefix}rotate(0deg)` }, { transform: `${prefix}rotate(360deg)` }]
+      : [0, 90, 180, 270, 360].map((angle, index) => ({
+          transform: `perspective(180px) ${prefix}rotate3d(${axisX},${axisY},0,${angle}deg)`,
+          offset: index / 4
+        }));
     entry.animation = svg.animate(
-      [{ transform: `${prefix}rotate(0deg)` }, { transform: `${prefix}rotate(360deg)` }],
+      frames,
       { duration: 36000, iterations: Infinity, easing: 'linear' }
     );
     entry.animation.pause();
